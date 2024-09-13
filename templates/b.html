@@ -140,24 +140,48 @@
     <h1>Thời trang chỉ cách bạn một cái Click!</h1>
     <form method = "post" action = "/" enctype="multipart/form-data">
         <div style="display: flex; justify-content: space-around;">
+            
             <div class="a" id="uploadDiv">
                 <div class="image-preview" id="imagePreview">
                     <span class="close-btn" id="closeBtn">X</span>
-                    <img id="previewImage" src="" alt="Hình ảnh đã chọn">
+                   
+                    <img id="previewImage" 
+                    
+                    src="{{imageP}}"
+                 
+                    alt="Hình ảnh đã chọn">
+                   
                 </div>
                 <p>Chọn ảnh:</p>
                 <input type="file" id="fileInput" accept="image/*" name = 'imageperson'>
             </div>
+           
+            
             <div class="load-area" id="loadArea" >
                 <div class="image-preview" id="imagePreview2">
                     <span class="close-btn" id="closeBtn2">X</span>
-                    <img id="previewImage2" src="" alt="Hình ảnh đã chọn"  name="imageclothes01">
+                    
+                    <img id="previewImage2" 
+                  
+                    src="{{imageC}}" 
+                  
+                    alt="Hình ảnh đã chọn"  name="imageclothes01">
+                    
                 </div>
                 <p>Chọn ảnh:</p>
                 <input type="file" id="fileInput2" accept="image/*" >
                 <input id = "getImage02" type="text" name="imageclothes02">
             </div>
-            <div class="a">Ảnh 3</div>
+           
+           
+            <div class="a">
+                <img 
+             
+                src="{{imageFinnal}}"
+
+                alt = "Hinh anh cuoi" >
+            </div>
+           
         </div>
         <div class="b">
             <input type = 'submit' class="bnt" value="Sinh ảnh"/>
