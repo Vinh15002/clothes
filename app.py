@@ -15,8 +15,8 @@ def hello_world():
     
 @app.route('/', methods = ['POST'])
 def predict_image():
-    imagelist = os.listdir('static/displayData')
-    imagelist = ['displayData/' + image for image in imagelist]
+    # imagelist = os.listdir('static/displayData')
+    # imagelist = ['displayData/' + image for image in imagelist]
     # imagefile = request.files['imageperson']
     
     # image_path = 'images/' + imagefile.filename
@@ -34,7 +34,45 @@ def predict_image():
     #     img.save('images/clothes.jpg')
 
     # return render_template('b.html', imageList = imagelist)
-    return redirect(url_for('process'))
+    # return redirect(url_for('process'))
+    return "HELLO"
+@app.route('/recomment', methods = ['GET'] )
+def DisplayRecomment():
+    imagelist = os.listdir('static/displayData')
+    imagelist = ['displayData/' + image for image in imagelist]
+    imagelist2 = os.listdir('static/recommentData/type1')
+    imagelist2 = ['recommentData/type1/' + image for image in imagelist2]
+    return render_template('b.html', imageList = imagelist, imageList2 = imagelist2)
+
+
+@app.route('/recomment', methods = ['POST'])
+def recomment():
+    imagelist = os.listdir('static/displayData')
+    imagelist = ['displayData/' + image for image in imagelist]
+    imagelist2 = os.listdir('static/recommentData/type1')
+    imagelist2 = ['recommentData/type1/' + image for image in imagelist2]
+    return redirect(url_for('DisplayRecomment'))
+    # imagefile = request.files['imageperson']
+    
+    # image_path = 'images/' + imagefile.filename
+    
+    # imagefile.save(image_path)
+    # l = request.form['imageclothes02']
+    # if len(l)<1:
+    #     imagefileclothe = request.files['imageclothes01']
+    #     image_path = 'images/clothes.jpg'
+    #     imagefileclothe.save(image_path)
+    # else:
+    #     imagefileclothe = request.form['imageclothes02']
+    #     imagefileclothe = imagefileclothe.replace('http://127.0.0.1:5000/','')
+    #     img = Image.open(imagefileclothe)
+    #     img.save('images/clothes.jpg')
+
+    # return render_template('b.html', imageList = imagelist)
+    # return redirect(url_for('process'))
+    # render_template('b.html', imageList = imagelist, imageList2=imagelist2)
+    
+
 
 @app.route('/process', methods = ['GET'])
 def process():
