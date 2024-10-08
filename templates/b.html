@@ -142,12 +142,12 @@
         <div style="display: flex; justify-content: space-around;">
             
             <div class="a" id="uploadDiv">
-                <div class="image-preview" id="imagePreview">
+                <div class="image-preview" id="imagePreview" style="display:{{DL}}">
                     <span class="close-btn" id="closeBtn">X</span>
                    
                     <img id="previewImage" 
                     
-                    src=""
+                    src="{{image_url}}"
                  
                     alt="Hình ảnh đã chọn">
                    
@@ -180,12 +180,13 @@
            
         </div>
         <div class="b">
-            <input type = 'submit' class="bnt" value="Sinh ảnh"/>
+            <input type = 'submit' class="bnt" value="Sinh ảnh" name = "submit_action"/>
         </div>
-    <form method = "post" action = "/recomment" enctype="multipart/form-data">
+   
         <div style="text-align: center; color: aliceblue;">
-            <button class="bnt">Gợi ý mẫu áo phù hợp với bạn</button>
+            <input type = 'submit' class="bnt" value="Gợi ý mẫu áo phù hợp" name = "submit_action"/>
         </div>
+    </form>
         <div style="text-align: center; color: aliceblue;">
             <h2>Mẫu áo phù hợp với bạn</h2>
     
@@ -195,8 +196,8 @@
             <img src = "{{url_for('static', filename = imageList2)}}" onclick="loadImage(this.src)"/>
             {% endfor %}     
         </div>
-    </form>
-    </form>
+    
+    
     <div style="text-align: center; color: aliceblue;">
         <h2>Tất cả mẫu áo</h2>
 
@@ -277,4 +278,3 @@
 
 </body>
 </html>
-
