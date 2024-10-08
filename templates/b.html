@@ -197,17 +197,17 @@
             {% endfor %}     
         </div>
     </form>
+    
     <div style="text-align: center; color: aliceblue;">
         <h2>Tất cả mẫu áo</h2>
 
     </div>
     <div class="menu"> 
-
         {% for imageList in imageList %}
         <img src = "{{url_for('static', filename = imageList)}}" onclick="loadImage(this.src)"/>
         {% endfor %}
     </div>
-  
+    
     <script>
         const fileInput = document.getElementById('fileInput');
         const fileInput2 = document.getElementById('fileInput2')
